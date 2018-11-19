@@ -44,14 +44,12 @@ Viz.js 2.1.1 (Graphviz 2.40.1, Emscripten 1.37.36)
     const loadPromise = new Promise(r=>{
       loadFn = r;
     })
-    global.Module = Module({
-      ...global.Module,
+    global.Module = Module(Object.assign(global.Module,{
       monitorRunDependencies: left => {
-        console.log(left);
         !left && loadFn();
       },
       printErr: console.error
-    });
+    }));
     global.render = render;
 
     if (typeof importScripts === "function") {

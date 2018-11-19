@@ -1,7 +1,7 @@
 {
   "name": "graphviz-wasm",
   "version": "1.0.0",
-  "main": "viz.es.js",
+  "main": "viz.main.js",
   "module": "viz.es.js",
   "license": "MIT"
 }
